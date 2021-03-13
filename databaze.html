@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Databáze</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Základy databází</h1>
+<h2>1. Co jsou to databáze?</h2>
+<p>
+    Databáze jsou systémy, které se používají k ukládání dat. Databází může být pro příklad accessová tabulka,
+    tištěný seznam, excelová tabulka či kniha. Všechny tyto způsoby jsou ovšem neefektivní pro ukládání většího
+    množství dat, proto byly vymyšleny Database Management Systémy.
+</p>
+
+<h2>2. Database Management System</h2>
+<p>
+    DBMS je software, který se stará o provádění operací s daty v databázi. Mezi v současnosti nejpoužívanější
+    DBMS patří MySQL, PostgreSQL, MongoDB či Oracle.
+</p>
+<p>
+    Operace, které DBMS provádí, se nazývají CRUD.
+</p>
+<ul>
+    <li>Create - Přidávání dat do databáze</li>
+    <li>Read - Čtení dat z databáze</li>
+    <li>Update - Měnění dat v databázi</li>
+    <li>Delete - Mazání dat z databáze</li>
+</ul>
+
+<h2>3. Druhy databází</h2>
+<p>
+    Databázové systémy se dělí na dva druhy - relační a nerelační.
+</p>
+<p>
+    Relační databázové systémy ukládají data do tabulek a k provádění CRUD operací používají standardizovaný jazyk SQL.
+</p>
+<p>
+    Nerelační databázové systémy jsou ty, které data do tabulek neukládají = používají jiný způsob ukládání dat.
+    Nemají žádný standardizovaný způsob pro provádění CRUD operací, tudíž se liší jak v implementaci, tak práci s nimi.
+</p>
+
+<h2>4. Relační databáze</h2>
+<p>
+    Data v relačních databázích jsou ukládána do tabulek. Jedna databáze má obvykle větší množství tabulek.
+</p>
+<p>Některé pojmy relačních databází:</p>
+<ul>
+    <li>Atribut - Sloupec tabulky</li>
+    <li>Záznam - Řádek tabulky</li>
+    <li>Primární klíč - Unikátní atribut, který jednoznačně označuje záznam v tabulce. Klíč se může skládat z jednoho
+        či více sloupců tabulky
+    </li>
+    <li>Cizí klíč - Atribut, který označuje primární klíč jiné (výjimečně i stejné) tabulky. Jedna tabulka může
+        mít více cizích klíčů
+    </li>
+</ul>
+
+<h2>5. SQL</h2>
+<p>
+    SQL je zkratka pro Structured Query Language. Používá se pro interakci s DBMS.
+    Používá se k:
+</p>
+<ul>
+    <li>Provádění CRUD operací</li>
+    <li>Tvoření a správu tabulek a databází</li>
+    <li>Administrační úlohy (export, import, zabezpečení...)</li>
+</ul>
+<p>
+    SQL je standardizovaným jazykem, ovšem ne všechny implementace DBMS tento standard dodržují. Základy implementací
+    jsou však zpravidla shodné či velice podobné.
+</p>
+<h3>5.1. Dotazy</h3>
+<p>
+    Dotaz (query) je set instrukcí, který se používá pro vykonání určité operace.
+</p>
+
+<br>
+<h1>Tvorba tabulek, zadávání a manipulace hodnot</h1>
+<h2>1. Setup</h2>
+<p>
+    Pro práci se bude používat XAMPP MySql, konkrétně webový interface localhost/phpmyadmin.
+</p>
+
+<h2>2. Datové typy</h2>
+<p>
+    V databázích se používá velké množství datových typů, zvolení správného datového typu optimalizuje databázi.
+    Příklady datových typů:
+</p>
+<ul>
+    <li>INT - Celé číslo</li>
+    <li>DECIMAL / FLOAT / DOUBLE - Desetinné číslo</li>
+    <li>VARCHAR(VELIKOST) - Řetězec</li>
+    <li>BLOB - Velké binární objekty, například obrázky</li>
+    <li>DATE - Ukládání data ve formátu yyyy-mm-dd</li>
+    <li>TIMESTAMP - Ukládání času ve formátu YYYY-MM-DD HH:MM:SS</li>
+</ul>
+
+<h2>3. Tvoření tabulek</h2>
+<p>
+    Tabulky se dají vytvořit přes grafické rozhraní phpmyadmin či přes SQL.
+    Syntaxe SQL dotazu pro vytvoření tabulky:
+</p>
+<p class="code">
+    CREATE TABLE <i>jmeno</i> (<i>jmenoSloupce</i> <b>datovyTyp</b>,
+    <i>jmenoSloupce</i> <b>datovyTyp</b> ... );
+</p>
+<p>
+    Příklad, který vytvoří tabulku s int id, string jménem a přijmením:
+</p>
+<p class="code">
+    CREATE TABLE person (
+    person_id INT PRIMARY KEY NOT NULL,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20)
+    );
+</p>
+<p>
+    Vytvoří tabulku:
+</p>
+<table>
+    <tr>
+        <th>person_id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+    </tr>
+</table>
+<h3>3.1 Constraints aneb jak se to sakra překládá</h3>
+<p>
+    Při tvorbě tabulky je možno nastavit chování jednotlivých sloupců, a to například nastavením defaultní hodnoty či
+    zakázáním NULL hodnoty. K tomu slouží constraints, které se píší za datový typ sloupce.
+</p>
+<p>Příklad syntaxe constraints při tvoření tabulky:</p>
+<p class="code">
+    CREATE TABLE person(
+        person_id INT PRIMARY KEY NOT NULL,
+        first_name VARCHAR(20) DEFAULT "Damian",
+        last_name VARCHAR(20) NOT NULl
+    )
+</p>
+<p>Tato tabulka bude mít int primární klíč, string jméno, které při nezadání hodnoty bude "Damian", a string
+    přijmení, které bude nutno zadat, jinak se dotaz neprovede.</p>
+<p>List obvykle používaných constraintů:</p>
+<ul>
+    <li>NOT NULL - Ujistí se, že sloupec má hodnotu, pokud tomu tak není, vyhodí error</li>
+    <li>UNIQUE - Ujistí se, že sloupec má unikátní hodnotu (hodnota, která se v něm nachází, není v žádném jiném záznamu)</li>
+    <li>PRIMARY KEY - Primární klíč, woooow!</li>
+    <li>DEFAULT <i>val</i> - Pokud není specifikována hodnota sloupce, nastaví ji na <i>val</i></li>
+    <li>CHECK <i>(podmínka)</i> - Ujistí se, že zadávaná hodnota splňuje podmínku</li>
+</ul>
+
+<h2>4. Mazání tabulek</h2>
+<p>
+    Tabulky se dají smazat pomocí snadného příkazu:
+</p>
+<p class="code">
+    DROP TABLE <i>jmenoTabulky</i>;
+</p>
+
+<h2>5. Modifikace tabulek</h2>
+<p>
+    Již existující tabulky lze modifikovat, například přidáním či odebráním sloupce nebo změnou datového typu sloupce.
+</p>
+<p class="code">ALTER TABLE <i>jmenoTabulky</i> ADD <i>jmenoSloupce</i> <b>datovyTyp</b></p>
+<p class="code">ALTER TABLE <i>jmenoTabulky</i> DROP COLUMN <i>jmenoSloupce</i></p>
+<p class="code">ALTER TABLE <i>jmenoTabulky</i> ALTER COLUMN <i>jmenoSloupce</i> <b>datovyTyp</b></p>
+
+<h2>6. Přidávání dat do tabulky</h2>
+<p>
+    Po vytvoření tabulky je potřeba ji naplnit daty. To se obvykle nedělá manuálně, ale za pomocí skriptu či programu.
+    Syntaxe sql dotazu pro přidání záznamu do tabulky:
+</p>
+<p class="code">INSERT INTO <i>jmenoTabulky</i> VALUES(<b>hodnoty</b>);</p>
+<p>Příklad, který přidá člověka Pepe Gun s id 0:</p>
+<p class="code">
+    INSERT INTO person VALUES(0, "Pepe", "Gun");
+</p>
+<p>Příklad, který přidá člověka Damian s id 1. Příjmení je neznámé, tudíž NULL</p>
+<p class="code">
+    INSERT INTO person(id, first_name) VALUES (1, "Damian");
+</p>
+
+<h2>7. Měnění dat v tabulce</h2>
+<h3>7.1. Měnění dat</h3>
+<p>Data v tabulce se dají měnit pomocí webového rozhraní phpmyadmin či SQL.</p>
+<p>Pro měnění dat se používá příkaz UPDATE:</p>
+<p class="code">
+    UPDATE <i>jmenoTabulky</i> SET <i>jmenoAtributu</i> = <b>hodnota</b> WHERE <b>podminka</b>;
+</p>
+<p>Příklad, který změní všechny lidi, kteří se jmenují "Pepa", na "Damián"</p>
+<p class="code">
+    UPDATE person SET first_name = "Damian" WHERE first_name = "Pepa";
+</p>
+<h3>7.2. Mazání záznamů</h3>
+<p>Na podobném principu funguje příkaz na mazání řádků tabulky:</p>
+<p class="code">
+    DELETE FROM <i>jmenoTabulky</i> WHERE <b>podminka</b>;
+</p>
+<p>Příklad, který smaže všechny, kteří se jmenují Damian</p>
+<p class="code">
+    DELETE FROM person WHERE first_name = "Damian";
+</p>
+
+<br>
+<h1>Získávání dat z databáze</h1>
+</body>
+</html>
