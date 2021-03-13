@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<h1>INFO</h1>
+<p>By 1T0S_</p>
+<p>Úprava textu:</p>
+<ul>
+    <li>Normální text</li>
+    <li class="code">Kód</li>
+    <li><i>Názva proměnných, tabulek či databází v kódu</i></li>
+    <li><b>Zvýraznění důležitých informací v textu či kódu</b></li>
+</ul>
+
+<br>
 <h1>Základy databází</h1>
 <h2>1. Co jsou to databáze?</h2>
 <p>
@@ -65,7 +76,7 @@
 <ul>
     <li>Provádění CRUD operací</li>
     <li>Tvoření a správu tabulek a databází</li>
-    <li>Administrační úlohy (export, import, zabezpečení...)</li>
+    <li>Administrativním úlohám (export, import, zabezpečení...)</li>
 </ul>
 <p>
     SQL je standardizovaným jazykem, ovšem ne všechny implementace DBMS tento standard dodržují. Základy implementací
@@ -110,10 +121,10 @@
     Příklad, který vytvoří tabulku s int id, string jménem a přijmením:
 </p>
 <p class="code">
-    CREATE TABLE person (
-    person_id INT PRIMARY KEY NOT NULL,
-    first_name VARCHAR(20),
-    last_name VARCHAR(20)
+    CREATE TABLE <i>person</i> (
+    <i>person_id</i> INT PRIMARY KEY NOT NULL,
+    <i>first_name</i> VARCHAR(20),
+    <i>last_name</i> VARCHAR(20)
     );
 </p>
 <p>
@@ -133,10 +144,10 @@
 </p>
 <p>Příklad syntaxe constraints při tvoření tabulky:</p>
 <p class="code">
-    CREATE TABLE person(
-        person_id INT PRIMARY KEY NOT NULL,
-        first_name VARCHAR(20) DEFAULT "Damian",
-        last_name VARCHAR(20) NOT NULl
+    CREATE TABLE <i>person</i>(
+    <i>person_id</i> INT PRIMARY KEY NOT NULL,
+    <i>first_name</i> VARCHAR(20) DEFAULT "Damian",
+    <i>last_name</i> VARCHAR(20) NOT NULL
     )
 </p>
 <p>Tato tabulka bude mít int primární klíč, string jméno, které při nezadání hodnoty bude "Damian", a string
@@ -146,8 +157,8 @@
     <li>NOT NULL - Ujistí se, že sloupec má hodnotu, pokud tomu tak není, vyhodí error</li>
     <li>UNIQUE - Ujistí se, že sloupec má unikátní hodnotu (hodnota, která se v něm nachází, není v žádném jiném záznamu)</li>
     <li>PRIMARY KEY - Primární klíč, woooow!</li>
-    <li>DEFAULT <i>val</i> - Pokud není specifikována hodnota sloupce, nastaví ji na <i>val</i></li>
-    <li>CHECK <i>(podmínka)</i> - Ujistí se, že zadávaná hodnota splňuje podmínku</li>
+    <li>DEFAULT <b>val</b> - Pokud není specifikována hodnota sloupce, nastaví ji na <b>val</b></li>
+    <li>CHECK <b>(podmínka)</b> - Ujistí se, že zadávaná hodnota splňuje podmínku</li>
 </ul>
 
 <h2>4. Mazání tabulek</h2>
@@ -174,11 +185,11 @@
 <p class="code">INSERT INTO <i>jmenoTabulky</i> VALUES(<b>hodnoty</b>);</p>
 <p>Příklad, který přidá člověka Pepe Gun s id 0:</p>
 <p class="code">
-    INSERT INTO person VALUES(0, "Pepe", "Gun");
+    INSERT INTO <i>person</i> VALUES(0, "Pepe", "Gun");
 </p>
 <p>Příklad, který přidá člověka Damian s id 1. Příjmení je neznámé, tudíž NULL</p>
 <p class="code">
-    INSERT INTO person(id, first_name) VALUES (1, "Damian");
+    INSERT INTO <i>person</i>(id, first_name) VALUES (1, "Damian");
 </p>
 
 <h2>7. Měnění dat v tabulce</h2>
@@ -190,7 +201,7 @@
 </p>
 <p>Příklad, který změní všechny lidi, kteří se jmenují "Pepa", na "Damián"</p>
 <p class="code">
-    UPDATE person SET first_name = "Damian" WHERE first_name = "Pepa";
+    UPDATE <i>person</i> SET <i>first_name</i> = "Damian" WHERE <i>first_name</i> = "Pepa";
 </p>
 <h3>7.2. Mazání záznamů</h3>
 <p>Na podobném principu funguje příkaz na mazání řádků tabulky:</p>
@@ -199,7 +210,7 @@
 </p>
 <p>Příklad, který smaže všechny, kteří se jmenují Damian</p>
 <p class="code">
-    DELETE FROM person WHERE first_name = "Damian";
+    DELETE FROM <i>person</i> WHERE <i>first_name</i> = "Damian";
 </p>
 
 <br>
