@@ -53,7 +53,7 @@
     <p>
         Příklad snippetu buttonu v Bootstrapu:
     </p>
-    <pre><code class="html">&lt;button type="button" class="btn btn-primary">Damiány&lt;/button></code></pre>
+    <pre><code class="html">        &lt;button type="button" class="btn btn-primary">Damiány&lt;/button></code></pre>
     </p>
     <h3>Layout</h3>
     <p>
@@ -170,10 +170,10 @@
     </pre>
     <pre>
         <code class="html">
-            &lt;div class="container-sm">100% šířka po small breakpoint</div>
-            &lt;div class="container-md">100% šířka po medium breakpoint</div>
-            &lt;div class="container-lg">100% šířka po large breakpoint</div>
-            &lt;div class="container-xl">100% šířka po extra large breakpoint</div>
+            &lt;div class="container-sm">100% šířka po small breakpoint&lt;/div>
+            &lt;div class="container-md">100% šířka po medium breakpoint&lt;/div>
+            &lt;div class="container-lg">100% šířka po large breakpoint&lt;/div>
+            &lt;div class="container-xl">100% šířka po extra large breakpoint&lt;/div>
         </code>
     </pre>
     <h3>Grid</h3>
@@ -282,9 +282,92 @@
 
 
     <h2>3. Komponenty a utility Bootstrap</h2>
+    <h3>
+        Komponenty
+    </h3>
     <p>
-
+        Bootstrap má hodně předdefinovaných komponentů, které stačí jen jednoduše zkopírovat z dokumentace. Jo, fakt. Nevím jako co u té maturity máme k tomuhle napsat, ale cool I guess.
     </p>
+    <p>
+        Příklady některých komponentů:
+    </p>
+    <p>
+        Karta
+    </p>
+    <pre>
+        <code class="html">
+            &lt;div class="card" style="width: 18rem;">
+                &lt;img src="..." class="card-img-top" alt="...">
+                &lt;div class="card-body">
+                    &lt;h5 class="card-title">Card title&lt;/h5>
+                    &lt;p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p>
+                    &lt;a href="#" class="btn btn-primary">Damiány&lt;/a>
+                &lt;/div>
+            &lt;/div>
+        </code>
+    </pre>
+    <img src="img/cardexample.PNG" alt="">
+    <p>
+        trošku větší komponent, Navbar
+    </p>
+    <pre>
+        <code class="html">
+            &lt;nav class="navbar navbar-expand-lg navbar-light bg-light">
+                &lt;a class="navbar-brand" href="#">Navbar&lt;/a>
+                &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    &lt;span class="navbar-toggler-icon">&lt;/span>
+                &lt;/button>
+              
+                &lt;div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    &lt;ul class="navbar-nav mr-auto">
+                        &lt;li class="nav-item active">
+                            &lt;a class="nav-link" href="#">Home &lt;span class="sr-only">(current)&lt;/span>&lt;/a>
+                        &lt;/li>
+                        &lt;li class="nav-item">
+                            &lt;a class="nav-link" href="#">Link&lt;/a>
+                        &lt;/li>
+                        &lt;li class="nav-item dropdown">
+                            &lt;a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown
+                            &lt;/a>
+                            &lt;div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                &lt;a class="dropdown-item" href="#">Action&lt;/a>
+                                &lt;a class="dropdown-item" href="#">Another action&lt;/a>
+                                &lt;div class="dropdown-divider">&lt;/div>
+                                &lt;a class="dropdown-item" href="#">Something else here&lt;/a>
+                            &lt;/div>
+                        &lt;/li>
+                        &lt;li class="nav-item">
+                            &lt;a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled&lt;/a>
+                        &lt;/li>
+                    &lt;/ul>
+                    &lt;form class="form-inline my-2 my-lg-0">
+                        &lt;input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        &lt;button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search&lt;/button>
+                    &lt;/form>
+                &lt;/div>
+            &lt;/nav>
+        </code>
+    </pre>
+    <img src="img/navbarexample.PNG" alt="">
+    <h3>Utility</h3>
+    <p>
+        Pokud chceš něco upravit, jako třeba alignement nebo tak něco, můžeš využít sadu Bootstrap utilit.
+    </p>
+    <p>
+        Opět, všechno je vysvětlené a popsané ze vším všudy v dokumentaci bootstrapu.
+    </p>
+    <p>
+        Ale i tak, pro příklad, Float utilita:
+    </p>
+    <pre>
+        <code class="html">
+            &lt;div class="float-left">Float left on all viewport sizes&lt;/div>&lt;br>
+            &lt;div class="float-right">Float right on all viewport sizes&lt;/div>&lt;br>
+            &lt;div class="float-none">Don't float on all viewport sizes&lt;/div>
+        </code>
+    </pre>
+    <img src="img/floatexample.PNG" alt="">
     <h2>4. Ikony a animace</h2>
     <p>
         Ikony Font awesome
