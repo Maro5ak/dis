@@ -1,11 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Hub</title>
+    <title>TO JE TEN BOOTSRAP</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="highlights/styles/atom-one-dark.css">
+    <script src="highlights/highlight.pack.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
 </head>
+
 <body>
-    <a href="databaze.html">Databáze</a>
+    <h1>INFO</h1>
+    <p>By Marosak</p>
+    <p>Style stolen from 1T0S_</p>
+    <p>Úprava textu:</p>
+    <ul>
+        <li>Normální text</li>
+        <li><i>Zvýraznění</i></li>
+    </ul>
+
+    <br>
+
+    <h1>Šablonovací systém pro vývoj WWW aplikací - Bootstrap</h1>
+    <h2>Co je to Bootstrap?</h2>
+    <h3>
+        Disclaimer: Bootstrap <i>není</i> šablonovací systém. <br> Taky, informace jsou vztahovány na <i>Bootstrap
+            v4.6.x</i>, protože tu dokumentaci máme k dispozici u maturity.
+    </h3>
+    <p>
+        Krátká kapitola na úvod Bootstrapu
+    </p>
+    <p>
+        Bootstrap je Frontend CSS Framework pro development <i>responzivních</i> webů s mobile-first přístupem.
+    </p>
+    <p>
+        Jedná se o obrovskou kolekci recyklovatelných částí kódu z HTML, CSS a Javascriptu, takže je možné velice jednoduše (CTRL+C, CTRL+V ehm) tvořit kompletně responzivní weby.
+    </p>
+    <p>
+        Další cool věc je, že je celý zdarma. Pokud ale nechceš dělat CTRL+C CTRL+V metodu, můžeš využít aplikace, jako je například <i>Bootstrap Studio</i>, které podporuje Drag&Drop. To ale není zdarma, pokud nemáš Github Student Pack.
+    </p>
+    <h2>1. Princip užití Bootstrapu</h2>
+    <h3>Používání Bootstrapu</h3>
+    <p>
+        Bootstrap je celý založený na <i>CTRL+C, CTRL+V designu</i>. V dokumentaci, která je buď na webu nebo offline, stačí vyhledat element nebo skupinu elementů, kterou chci použít, najít vhodný snippet kódu a zkopírovat k sobě do dokumentu.
+    </p>
+    <p>
+        Veškerý design elementů je v <i>CSS souborech</i> a pomocí <i>class</i> se pak celkem jednoduše dá nadesignovat jakkoliv je potřeba.
+    </p>
+    <p>
+        Příklad snippetu buttonu v Bootstrapu:
+    </p>
+    <pre><code class="html">&lt;button type="button" class="btn btn-primary">Damiány&lt;/button></code></pre>
+    </p>
+    <h3>Layout</h3>
+    <p>
+        Layout Bootstrapu je celý pomocí <i>responzivního grid systemu</i>. Nejdůležitější element pro tvorbu layoutu je
+        <i>Container</i>.
+    </p>
+    <p>
+        Container má <i>3 typy</i>
+        <ul>
+            <li>
+                <i>.container</i> - nastavuje <i>max-width</i> na každém responzivním breakpointu
+            </li>
+            <li>
+                <i>.container-fluid</i> - nastavuje <i>width: 100%</i> na všech breakpointech
+            </li>
+            <li>
+                <i>.container-{nazev-breakpointu}</i> - nastavuje <i>width: 100%</i> až po specifkovaný breakpoint <br> Tabulka breakpointů <br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>
+                                Extra small<br>
+                                <span>&lt;576px</span>
+                            </th>
+                            <th>
+                                Small<br>
+                                <span>≥576px</span>
+                            </th>
+                            <th>
+                                Medium<br>
+                                <span>≥768px</span>
+                            </th>
+                            <th>
+                                Large<br>
+                                <span>≥992px</span>
+                            </th>
+                            <th>
+                                Extra large<br>
+                                <span>≥1200px</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>.container</code></td>
+                            <td>100%</td>
+                            <td>540px</td>
+                            <td>720px</td>
+                            <td>960px</td>
+                            <td>1140px</td>
+                        </tr>
+                        <tr>
+                            <td><code>.container-sm</code></td>
+                            <td>100%</td>
+                            <td>540px</td>
+                            <td>720px</td>
+                            <td>960px</td>
+                            <td>1140px</td>
+                        </tr>
+                        <tr>
+                            <td><code>.container-md</code></td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>720px</td>
+                            <td>960px</td>
+                            <td>1140px</td>
+                        </tr>
+                        <tr>
+                            <td><code>.container-lg</code></td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>960px</td>
+                            <td>1140px</td>
+                        </tr>
+                        <tr>
+                            <td><code>.container-xl</code></td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>1140px</td>
+                        </tr>
+                        <tr>
+                            <td><code>.container-fluid</code></td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                        </tr>
+                    </tbody>
+                </table> <br> (Ukradeno z Bootstrap dokumentace)
+            </li>
+        </ul>
+    </p>
+    <p>
+        Příklady použití jednotlivých <i>containerů</i>:
+    </p>
+    <pre>
+        <code class="html">
+            &lt;div class="container">
+                &lt;!-- Content here -->
+            &lt;/div>
+        </code>
+    </pre>
+    <pre>
+        <code class="html">
+            &lt;div class="container-fluid">
+                &lt;!-- Content here -->
+            &lt;/div>
+        </code>
+    </pre>
+    <pre>
+        <code class="html">
+            &lt;div class="container-sm">100% šířka po small breakpoint</div>
+            &lt;div class="container-md">100% šířka po medium breakpoint</div>
+            &lt;div class="container-lg">100% šířka po large breakpoint</div>
+            &lt;div class="container-xl">100% šířka po extra large breakpoint</div>
+        </code>
+    </pre>
+    <h3>Grid</h3>
+    <p>
+        Grid v bootstrapu využívá vesměs sérii containerů, rows a columns na alignování contentu. Je vytvořen pomocí
+        <i>flexboxů a je zcela responzivní</i>.
+    </p>
+    <p>
+        Příklad vytvoření gridu pomocí těch věcí. Stejně jako u containeru, i columns mají různé nastavení pomocí breakpointů.
+    </p>
+    <pre>
+        <code class="html">
+            &lt;div class="container">
+                &lt;div class="row">
+                    &lt;div class="col-sm">
+                        One of three columns
+                    &lt;/div>
+                    &lt;div class="col-sm">
+                        One of three columns
+                    &lt;/div>
+                    &lt;div class="col-sm">
+                        One of three columns
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        </code>
+    </pre>
+    <p>
+        A takhle to dopadne
+    </p>
+    <img src="img/gridexample.PNG" alt="">
+
+    <p>
+        Další možnost, kterou columns nabízejí, je specifikace šířky.
+    </p>
+    <pre>
+        <code class="html">
+            &lt;div class="container">
+                &lt;div class="row">
+                    &lt;div class="col">
+                        1 of 3
+                    &lt;/div>
+                    &lt;div class="col-6">
+                        2 of 3 (wider)
+                    &lt;/div>
+                    &lt;div class="col">
+                        3 of 3
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="row">
+                    &lt;div class="col">
+                        1 of 3
+                    &lt;/div>
+                    &lt;div class="col-5">
+                        2 of 3 (wider)
+                    &lt;/div>
+                    &lt;div class="col">
+                        3 of 3
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        </code>
+    </pre>
+    <p>
+        Což vypadá takhle
+    </p>
+    <img src="img/gridexample2.PNG" alt="">
+
+
+    <h2>2. Responzivita</h2>
+    <h3>Mobile-first přístup</h3>
+    <p>
+        Mobile-first přístup znamená, že se webovky designované Bootstrapem snaží dávat vývoj layoutu <i>pro mobilní
+            zařízení na první místo</i>, jako by se jednalo o desktopy.
+    </p>
+    <p>
+        Toho docílí pomocí <i>media queries</i>, díky kterým vytváří sérii <i>breakpointů</i> pro layout a interfacy. Tyto breakpointy jsou based na <i>minimální šířce viewportů zařízení</i> a podle nich se scalují elementy webu.
+    </p>
+    <p>
+        Media queries jsou definované v <i>CSS Bootstrapu</i>, takže si je člověk může upravit, yay.
+    </p>
+    <pre>
+        <code class="css">
+            // Extra small devices (portrait phones, less than 576px)
+            // No media query for `xs` since this is the default in Bootstrap
+
+            // Small devices (landscape phones, 576px and up)
+            @media (min-width: 576px) { ... }
+
+            // Medium devices (tablets, 768px and up)
+            @media (min-width: 768px) { ... }
+
+            // Large devices (desktops, 992px and up)
+            @media (min-width: 992px) { ... }
+
+            // Extra large devices (large desktops, 1200px and up)
+            @media (min-width: 1200px) { ... }
+        </code>
+    </pre>
+    <p>
+        Jednou z věcí, kterou Bootstrap využívá pro alignování contentu je <i>z-index</i>. Používá se k alignování věcí na 3. ose pro komponenty, jako jsou tooltips, popovers, modals a další komponenty, které překrývají jiné komponenty.
+    </p>
+    <p>
+        Doporučují neměnit tyto hodnoty, protože by se to rozbilo.
+    </p>
+
+
+    <h2>3. Komponenty a utility Bootstrap</h2>
+    <p>
+
+    </p>
+    <h2>4. Ikony a animace</h2>
+    <p>
+        Ikony Font awesome
+    </p>
+    <p>
+        Animace pomocí wow.js
+    </p>
+    <p>
+        Grafy pomocí chart.js
+    </p>
+    <h2>5. Jednoduché aplikace s Bootstrap</h2>
+    <p>
+
+    </p>
+
+
 </body>
+
 </html>
