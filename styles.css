@@ -1,6 +1,6 @@
 body{
     background-color: #2d2e34;
-    padding: 2vh 2vw;
+    padding: 2vh 10vw;
 }
 
 h1{
@@ -22,9 +22,14 @@ h3{
 
 p{
     color: #fff;
-    font-family: Consolas, serif;
+    font-family: "Consolas", serif;
     padding-left: 4vw;
-    padding-right: 8vw
+    padding-right: 8vw;
+}
+
+pre{
+    padding-left: 4vw;
+    padding-right: 8vw;
 }
 
 li{
@@ -40,17 +45,14 @@ br{
     margin-top: 5vh;
 }
 
-.code{
-    font-family: Inconsolata, serif;
-    color: #00FDFF;
-    background-color: #22262B
-}
-
 table, th, td{
     color: white;
     margin-left: 4vw;
     border: 1px solid #aaa;
-    border-collapse: collapse;
+}
+
+tr, th, td{
+    padding: 10px;
 }
 
 a{
